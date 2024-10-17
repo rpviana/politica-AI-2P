@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e2e2e2, #ffffff);
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background: #4a90e2;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura total da tela */
+    overflow: hidden; /* Oculta conteúdo fora da área visível */
+    position: relative;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    padding: 20px;
+    position: absolute; /* Para o efeito de transição */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.card.hidden {
+    opacity: 0;
+    transform: translateY(100%); /* Mover para baixo */
+}
+
+.card.active {
+    opacity: 1;
+    transform: translateY(0); /* Mover para o lugar */
+}
+
+.arrow-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.arrow-up, .arrow-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.btn span {
+    margin: 0 5px;
+}
