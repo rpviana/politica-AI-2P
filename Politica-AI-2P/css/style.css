@@ -22,8 +22,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Altura total da tela */
-    overflow: hidden; /* Oculta conteúdo fora da área visível */
+    height: 100vh;
+    overflow: hidden;
     position: relative;
 }
 
@@ -33,40 +33,70 @@ header {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 90%;
     padding: 20px;
-    position: absolute; /* Para o efeito de transição */
+    position: absolute;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .card.hidden {
     opacity: 0;
-    transform: translateY(100%); /* Mover para baixo */
+    transform: translateY(100%);
 }
 
 .card.active {
     opacity: 1;
-    transform: translateY(0); /* Mover para o lugar */
+    transform: translateY(0);
 }
 
-.arrow-buttons {
+/* Botão Ver Informações */
+.info-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+/* Estilo para os botões de navegação fora das cartas */
+.navigation {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    pointer-events: none;
+}
+
+#prevButton, #nextButton {
+    pointer-events: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin: 10px;
 }
 
-.arrow-up, .arrow-down {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0;
+#prevButton span {
+    margin-top: 10px; /* Texto abaixo da seta no botão anterior */
 }
 
-.btn {
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
+#nextButton span {
+    margin-bottom: 10px; /* Texto acima da seta no botão próximo */
 }
 
-.btn span {
-    margin: 0 5px;
+#prevButton {
+    position: absolute;
+    top: 20px; /* Posiciona o botão anterior no topo da tela */
+}
+
+#nextButton {
+    position: absolute;
+    bottom: 20px; /* Posiciona o botão próximo no fundo da tela */
+}
+
+.btn i {
+    font-size: 24px;
 }
