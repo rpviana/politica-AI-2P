@@ -25,6 +25,7 @@ header {
     height: 100vh;
     overflow: hidden;
     position: relative;
+    padding-top: 10px; /* Move o conteúdo da carta mais para cima */
 }
 
 .card {
@@ -32,10 +33,12 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 90%;
+    height: 50%; /* Aumenta a altura da carta */
     padding: 20px;
     position: absolute;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
+
 
 .card.hidden {
     opacity: 0;
@@ -45,6 +48,15 @@ header {
 .card.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+.card img {
+    width: 200px; /* Largura fixa */
+    height: 300px; /* Altura fixa, dando uma aparência vertical */
+    object-fit: cover; /* Garante que a imagem seja cortada, se necessário, para se ajustar */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem dentro da carta */
+    border-radius: 5px; /* Opcional: bordas arredondadas */
 }
 
 /* Botão Ver Informações */
@@ -89,7 +101,7 @@ header {
 
 #prevButton {
     position: absolute;
-    top: 20px; /* Posiciona o botão anterior no topo da tela */
+    top: 100px; /* Aumente este valor para mover o botão mais para baixo */
 }
 
 #nextButton {
