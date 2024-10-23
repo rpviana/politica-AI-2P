@@ -23,90 +23,98 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
     position: relative;
-    padding-top: 10px; /* Move o conteúdo da carta mais para cima */
+    overflow: hidden;
 }
 
 .card {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    height: 50%; /* Aumenta a altura da carta */
+    width: 60%;
     padding: 20px;
     position: absolute;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
+.card img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.card p {
+    text-align: left;
+    flex: 1;
+}
 
 .card.hidden {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateX(100%); /* Sai pela direita */
 }
 
 .card.active {
     opacity: 1;
-    transform: translateY(0);
-}
-
-.card img {
-    width: 200px; /* Largura fixa */
-    height: 300px; /* Altura fixa, dando uma aparência vertical */
-    object-fit: cover; /* Garante que a imagem seja cortada, se necessário, para se ajustar */
-    display: block;
-    margin: 0 auto; /* Centraliza a imagem dentro da carta */
-    border-radius: 5px; /* Opcional: bordas arredondadas */
+    transform: translateX(0); /* Entra no centro */
 }
 
 /* Botão Ver Informações */
 .info-btn {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
     background-color: #007bff;
     color: white;
     border-radius: 5px;
     padding: 10px 15px;
+    margin-left: auto;
 }
 
-/* Estilo para os botões de navegação fora das cartas */
+/* Estilo para os botões de navegação */
 .navigation {
     position: absolute;
     width: 100%;
+    height: 100%;
     top: 0;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
     align-items: center;
-    height: 100vh;
     pointer-events: none;
 }
 
 #prevButton, #nextButton {
     pointer-events: auto;
+    background-color: #007bff; /* Azul para o fundo do botão */
+    border: none;
+    border-radius: 0; /* Quadrado */
+    width: 50px;
+    height: 50px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 10px;
+    position: absolute;
+    color: white; /* Define a cor do texto */
 }
 
-#prevButton span {
-    margin-top: 10px; /* Texto abaixo da seta no botão anterior */
+#prevButton i, #nextButton i {
+    font-size: 24px;
+    color: white; /* Define a cor da seta como branca */
 }
 
-#nextButton span {
-    margin-bottom: 10px; /* Texto acima da seta no botão próximo */
+/* Se necessário, você pode adicionar mais estilos para o hover */
+#prevButton:hover, #nextButton:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
+
 
 #prevButton {
-    position: absolute;
-    top: 100px; /* Aumente este valor para mover o botão mais para baixo */
+    left: 20px; /* Botão "Anterior" na esquerda */
 }
 
 #nextButton {
-    position: absolute;
-    bottom: 20px; /* Posiciona o botão próximo no fundo da tela */
+    right: 20px; /* Botão "Próximo" na direita */
 }
 
 .btn i {

@@ -16,7 +16,12 @@ function showCurrentCard() {
         card.classList.remove('active', 'hidden');
         if (index === currentIndex) {
             card.classList.add('active');
+            card.style.transform = 'translateX(0)';
+        } else if (index < currentIndex) {
+            card.style.transform = 'translateX(-100%)'; // Sai pela esquerda
+            card.classList.add('hidden');
         } else {
+            card.style.transform = 'translateX(100%)'; // Sai pela direita
             card.classList.add('hidden');
         }
     });
@@ -26,10 +31,7 @@ function showCurrentCard() {
         prevButton.style.display = 'none';
     } else {
         prevButton.style.display = 'block';
-        prevButton.innerHTML = `
-            <i class="bi bi-caret-up-fill"></i>
-            <span>${cardTitles[currentIndex - 1]}</span>
-        `;
+        prevButton.innerHTML = `<i class="bi bi-caret-left-fill"></i>`; // Remove o texto
     }
 
     // Ajusta o texto e visibilidade do botão "próximo"
@@ -37,10 +39,7 @@ function showCurrentCard() {
         nextButton.style.display = 'none';
     } else {
         nextButton.style.display = 'block';
-        nextButton.innerHTML = `
-            <span>${cardTitles[currentIndex + 1]}</span>
-            <i class="bi bi-caret-down-fill"></i>
-        `;
+        nextButton.innerHTML = `<i class="bi bi-caret-right-fill"></i>`; // Remove o texto
     }
 }
 
