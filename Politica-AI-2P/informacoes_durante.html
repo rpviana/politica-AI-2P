@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Durante o Stalinismo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fbff00;
+            padding: 20px;
+        }
+        .collapsible3 {
+            background-color: #ff0000;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .collapsible:hover {
+            background-color: #ca0e8b;
+        }
+        .content3 {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: rgb(226, 202, 65);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .content p {
+            padding: 15px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Durante o Stalinismo</h1>
+    </header>
+    <main>
+        <button class="collapsible3">1. Situação Política</button>
+        <div class="content3">
+            <p>A Rússia era governada pelo czarismo...</p>
+        </div>
+
+        <button class="collapsible3">2. Economia</button>
+        <div class="content3">
+            <p>A economia da Rússia era baseada em agricultura feudal...</p>
+        </div>
+
+        <button class="collapsible3">3. Vida de Lenin</button>
+        <div class="content3">
+            <button class="collapsible3">Infância</button>
+            <div class="content3">
+                <p>Lenin nasceu em Simbirsk...</p>
+            </div>
+
+            <button class="collapsible3">Ativismo</button>
+            <div class="content3">
+                <p>Lenin se envolveu no movimento revolucionário...</p>
+            </div>
+
+            <button class="collapsible3">Revolução de 1905</button>
+            <div class="content3">
+                <p>Durante a Revolução de 1905, Lenin retornou brevemente... <br>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+            </div>
+
+            <button class="collapsible3">Revolução de 1905</button>
+            <div class="content3">
+                <p>Durante a Revolução de 1905, Lenin retornou brevemente...</p>
+            </div>
+        </div>
+
+        <button class="collapsible3">Últimos Anos de Lenin</button>
+        <div class="content3">
+            <a href="https://www.youtube.com/watch?v=8MF9ogvqMn8&start=702" 
+               target="_blank" 
+               class="btn btn-primary">
+                Últimos Anos
+            </a>
+        </div>  
+        <img src="img/comunismo.png" alt="Bandeira Comunista">          
+    </main>
+
+    <script>
+        // Lógica para abrir e fechar os botões colapsáveis
+        const coll = document.querySelectorAll(".collapsible3");
+        coll.forEach(button => {
+            button.addEventListener("click", function() {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

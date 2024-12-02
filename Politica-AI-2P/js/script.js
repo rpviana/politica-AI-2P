@@ -61,5 +61,22 @@ prevButton.addEventListener('click', function() {
     showCurrentCard();
 });
 
+// Lógica para abrir e fechar os botões colapsáveis
+const coll = document.querySelectorAll(".collapsible");
+coll.forEach((button) => {
+    button.addEventListener("click", function () {
+        const content = this.nextElementSibling;
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            document.querySelectorAll(".content").forEach((c) => {
+                c.style.maxHeight = null; // Fecha os outros
+            });
+            content.style.maxHeight = content.scrollHeight + "px"; // Abre o atual
+        }
+    });
+});
+
 // Inicializa mostrando a primeira carta e ajusta os botões
 showCurrentCard();
