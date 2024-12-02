@@ -1,154 +1,149 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Antes do Stalinismo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8f9fa;
-            padding: 20px;
-            font-size: 18px;
-        }
-
-        .collapsible {
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 20px;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-
-        .collapsible:hover {
-            background-color: #0056b3;
-        }
-
-        .content {
-            padding: 0 15px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .content p, .content ul {
-            padding: 15px 0;
-            font-size: 18px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 315px;
-            border: none;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-
-        /* Sub-conteúdo dentro de "Vida de Lenin" */
-        .sub-content {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .sub-content .collapsible {
-            margin-top: 10px;
-            width: 95%; /* Botões menores */
-            text-align: left;
-        }
-
-        .sub-content .content {
-            margin-left: 20px; /* Cria um recuo visual */
-            padding: 10px;
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion - Vida de Lenin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f8ff; /* Azul claro */
+    }
+    .accordion-button {
+      background-color: #0056b3; /* Azul */
+      color: white;
+    }
+    .accordion-body {
+      background-color: #ffffff; /* Branco */
+      background-image: url('your-image-path.jpg'); /* Caminho da sua imagem de fundo */
+      background-size: cover;
+    }
+    .btn-secondary {
+      background-color: #d9534f;
+      color: white;
+      border: none;
+    }
+    .btn-secondary:hover {
+      background-color: #c9302c;
+    }
+    /* Estilo para o título */
+    h1 {
+      background-color: #007bff; /* Azul */
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Antes do Stalinismo</h1>
-    </header>
-    <main>
-        <button class="collapsible">1. Situação Política</button>
-        <div class="content">
-            <p>A Rússia era governada pelo czarismo...</p>
+  <div class="container mt-5">
+    <!-- Título centralizado -->
+    <h1>Antes do Stalinismo</h1>
+
+    <div class="accordion" id="accordionExample">
+      <!-- Situação Política -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            1. Situação Política
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <h5>1. Situação Política</h5>
+            <p>Informações sobre a situação política...</p>
+          </div>
         </div>
-
-        <button class="collapsible">2. Economia</button>
-        <div class="content">
-            <p>A economia da Rússia era baseada em agricultura feudal...</p>
+      </div>
+      <!-- Economia -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            2. Economia
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <h5>2. Economia</h5>
+            <p>Informações sobre a economia...</p>
+          </div>
         </div>
-
-        <button class="collapsible">3. Vida de Lenin</button>
-        <div class="content">
-            <p>Владимир Ленин, mais conhecido como Lenin, foi uma das, se é que não foi a figura central na Revolução Russa de 1917 e o líder fundador da União Soviética.</p>
-            
-            <div class="sub-content">
-                <button class="collapsible">Infância e Formação</button>
-                <div class="content">
-                    <ul>
-                        <li><strong>Nascimento e Família:</strong> Lenin nasceu em 1870...</li>
-                        <li><strong>Influência do Irmão:</strong> A execução do seu irmão...</li>
-                        <li><strong>Estudos e Marxismo:</strong> Durante os estudos de Direito...</li>
-                    </ul>
+      </div>
+      <!-- Vida de Lenin -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            3. Vida de Lenin
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <h5>3. Vida de Lenin</h5>
+            <div class="accordion" id="accordionVidaLenin">
+              <!-- Infância -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingInfancia">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInfancia" aria-expanded="false" aria-controls="collapseInfancia">
+                    Infância
+                  </button>
+                </h2>
+                <div id="collapseInfancia" class="accordion-collapse collapse" aria-labelledby="headingInfancia" data-bs-parent="#accordionVidaLenin">
+                  <div class="accordion-body">
+                    <h5>Infância</h5>
+                    <p>Descrição sobre a infância de Lenin...</p>
+                  </div>
                 </div>
-
-                <button class="collapsible">Liderança e Criação da União Soviética</button>
-                <div class="content">
-                    <ul>
-                        <li><strong>Comissário do Povo:</strong> Lenin assumiu o cargo de líder...</li>
-                        <li><strong>Guerra Civil Russa:</strong> Lenin liderou os bolcheviques...</li>
-                        <li><strong>Comunismo de Guerra:</strong> Lenin adotou o Comunismo de Guerra...</li>
-                    </ul>
+              </div>
+              <!-- Ativismo -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingAtivismo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAtivismo" aria-expanded="false" aria-controls="collapseAtivismo">
+                    Ativismo
+                  </button>
+                </h2>
+                <div id="collapseAtivismo" class="accordion-collapse collapse" aria-labelledby="headingAtivismo" data-bs-parent="#accordionVidaLenin">
+                  <div class="accordion-body">
+                    <h5>Ativismo</h5>
+                    <p>Lenin se envolveu no movimento revolucionário...</p>
+                  </div>
                 </div>
-
-                <button class="collapsible">Revolução de 1905</button>
-                <div class="content">
-                    <p>Durante a Revolução de 1905, Lenin retornou brevemente...</p>
+              </div>
+              <!-- Revolução de 1905 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingRevolucao">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRevolucao" aria-expanded="false" aria-controls="collapseRevolucao">
+                    Revolução de 1905
+                  </button>
+                </h2>
+                <div id="collapseRevolucao" class="accordion-collapse collapse" aria-labelledby="headingRevolucao" data-bs-parent="#accordionVidaLenin">
+                  <div class="accordion-body">
+                    <h5>Revolução de 1905</h5>
+                    <p>Durante a Revolução de 1905, Lenin retornou brevemente e continuou a promover suas ideias revolucionárias...</p>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+      <!-- Últimos Anos de Lenin -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Últimos Anos de Lenin
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <h5>Últimos Anos de Lenin</h5>
+            <p>Informações sobre os últimos anos de Lenin...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <button class="collapsible">4. Últimos Anos de Lenin</button>
-        <div class="content">
-            <a href="https://www.youtube.com/watch?v=8MF9ogvqMn8&start=702" 
-               target="_blank" 
-               class="btn btn-primary">
-                Últimos Anos
-            </a>
-        </div>    
-        <img src="img/lenin.svg" alt="Bandeira Comunista">    
-    </main>
-
-    <script>
-        const coll = document.querySelectorAll(".collapsible");
-        coll.forEach(button => {
-            button.addEventListener("click", function() {
-                this.classList.toggle("active");
-                const content = this.nextElementSibling;
-
-                // Se o conteúdo estiver fechado, expandir
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null; // Fecha o conteúdo
-                } else {
-                    // Expande o conteúdo para o tamanho necessário
-                    content.style.maxHeight = content.scrollHeight + "px";
-                }
-            });
-        });
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
