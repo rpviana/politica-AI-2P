@@ -78,12 +78,5 @@ coll.forEach((button) => {
     });
 });
 
-function scrollToContent() {
-    const target = document.getElementById('scrollTarget');
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  }
-  
 // Inicializa mostrando a primeira carta e ajusta os botões
 showCurrentCard();
